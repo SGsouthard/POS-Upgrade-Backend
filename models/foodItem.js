@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
 const { INTEGER } = require('sequelize/dist');
 
-const menuSchema = new mongoose.Schema({
+const foodItemSchema = new mongoose.Schema({
     name: String,
     description: String,
+    price: Number,
     menuItem: Number
 });
 
-const Menu = mongoose.model("Menu", menuSchema);
+const foodItem = mongoose.model("FoodItem", foodItemSchema);
 
-module.exports = Menu;
+module.exports = foodItem;
