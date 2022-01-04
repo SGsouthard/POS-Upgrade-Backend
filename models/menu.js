@@ -3,7 +3,6 @@ const { INTEGER } = require('sequelize/dist');
 
 const menuSchema = new mongoose.Schema({
     name: String,
-    description: String,
     menuItem: Number
 });
 
