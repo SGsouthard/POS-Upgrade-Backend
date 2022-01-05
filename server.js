@@ -1,5 +1,5 @@
 const express = require("express");
-// const { Component } = require("./models");
+const { Menu } = require("./discarded-code");
 const app = express();
 
 app.use((req, res, next) => {
