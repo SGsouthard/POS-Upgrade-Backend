@@ -34,14 +34,14 @@ const specificationFood = new mongoose.Schema({
     price: Number,
 })
 
+//menu base (The matryoshka doll)
 const menuSchema = new mongoose.Schema({
-    name: String,
+    // name: String,
     foodItems: [foodItem],
     drinkItems: [drinkItem],
     foodTypes: [foodType],
     specificationDrinks: [specificationDrink],
     specificationFood: [specificationFood]
-
 
 });
 const Menu = mongoose.model("Menu", menuSchema);
