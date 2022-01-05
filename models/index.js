@@ -22,6 +22,8 @@ db.on("error", () => {
 });
 
 module.exports = {
-    // Weapon: require("./weapon"),
+    FoodItem: require("./FoodItem"),
+    FoodType: require("./FoodType"),
+    Menu: require("./menu")
     
 };
