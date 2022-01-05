@@ -30,7 +30,9 @@ const User = require('./user');
 module.exports = {
     // model goes here
     User,
+    Menu: require("./menu"),
     FoodItem: require("./FoodItem"),
     FoodType: require("./FoodType"),
-    Menu: require("./menu")
+    DrinkItem: require("./DrinkItem"),
+    Specification: require("./Specifications")
 }
