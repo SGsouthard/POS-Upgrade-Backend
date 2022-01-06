@@ -17,20 +17,16 @@ const drinkItem = new mongoose.Schema({
 //Food Types (alcohol, lunch, dinner?)
 const foodType = new mongoose.Schema({
     name: String,
-    description: String,
-    price: Number,
 });
 
 //Specifications
 const specificationDrink = new mongoose.Schema({
     name: String,
-    description: String,
     price: Number,
 })
 
 const specificationFood = new mongoose.Schema({
     name: String,
-    description: String,
     price: Number,
 })
 
