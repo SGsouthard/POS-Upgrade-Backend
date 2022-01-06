@@ -1,12 +1,7 @@
 const mongoose = require('mongoose');
 const { Menu, FoodType, FoodItem, Specification, DrinkItem } = require("./models");
 
-const drink = new DrinkItem ({
-    _id: "",
-    name: "",
-    description: "",
-    price: 
-})
+
 
 ////Whole Menu
 // const menu = new Menu({

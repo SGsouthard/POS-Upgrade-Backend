@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const foodTypeSchema = new mongoose.Schema({
-    _id: String,
     name: String,
     description: String,
     price: Number,
