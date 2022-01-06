@@ -1,12 +1,13 @@
-// const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-// const foodItemSchema = new mongoose.Schema({
-//     name: String,
-//     description: String,
-//     price: Number,
+const foodItemSchema = new mongoose.Schema({
+    _id: String,
+    name: String,
+    description: String,
+    price: Number,
     
-// });
+});
 
-// const FoodItem = mongoose.model("FoodItem", foodItemSchema);
+const FoodItem = mongoose.model("FoodItem", foodItemSchema);
 
-// module.exports = FoodItem;
+module.exports = FoodItem;

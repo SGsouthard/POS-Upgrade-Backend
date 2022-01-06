@@ -1,10 +1,10 @@
-// const mongoose =  require ('mongoose');
+const mongoose =  require ('mongoose');
 
-// const drinkItemSchema = new mongoose.Schema({
-//     name: String,
-//     description: String,
-//     price: Number,
-//     drinkMenuNumber: Number
-// })
+const drinkItemSchema = new mongoose.Schema({
+    _id: String,
+    name: String,
+    description: String,
+    price: Number,
+})
 
-// const DrinkItem = mongoose.model()
+const DrinkItem = mongoose.model()

@@ -25,5 +25,4 @@ module.exports = {
     FoodItem: require("../models/FoodItem"),
     FoodType: require("../models/FoodType"),
     Menu: require("../models/menu")
-    
 };

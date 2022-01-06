@@ -37,8 +37,6 @@ const menuSchema = new mongoose.Schema({
     foodTypes: [foodType],
     specificationDrinks: [specificationDrink],
     specificationFood: [specificationFood]
-
-
 });
 const Menu = mongoose.model("Menu", menuSchema);
 
