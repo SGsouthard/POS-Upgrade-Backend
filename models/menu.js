@@ -5,6 +5,7 @@ const foodItem = new mongoose.Schema({
     name: String,
     description: String,
     price: Number,
+    foodType: Array,
 })
 
 //Drinks
@@ -12,9 +13,11 @@ const drinkItem = new mongoose.Schema({
     name: String,
     description: String,
     price: Number,
+    foodType: Array,
 })
 
 //Food Types (alcohol, lunch, dinner?)
+//Keeping just in case but will be including foodTypes inside the schema
 const foodType = new mongoose.Schema({
     name: String,
 });
