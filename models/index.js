@@ -34,5 +34,5 @@ module.exports = {
     FoodItem: require("./FoodItem"),
     FoodType: require("./FoodType"),
     DrinkItem: require("./DrinkItem"),
-    Specification: require("./Specifications")
+    Specification: require("./Specification")
 }

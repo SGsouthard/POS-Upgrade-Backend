@@ -1,5 +1,5 @@
 const express = require("express");
-const { Menu } = require("./models/menu");
+const { Menu } = require("./models");
 const app = express();
 
 app.use((req, res, next) => {
@@ -23,8 +23,17 @@ app.get("/", async (request, response) => {
 
 app.get("/menu", async (request, response) => {
   try {
-    const menuArray = await DrinkItem.find({});
+    const menuArray = await Menu.find({});
     response.json({ menuArray });
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
+app.get("/food", async (request, response) => {
+  try {
+    const foodArray = await Menu.find({FoodItem});
+    response.json({ foodArray });
   } catch (error) {
     response.status(500).send(error);
   }

@@ -6,4 +6,6 @@ const drinkItemSchema = new mongoose.Schema({
     price: Number,
 })
 
-const DrinkItem = mongoose.model("DrinkItem", )
+const DrinkItem = mongoose.model("DrinkItem", drinkItemSchema)
+
+module.exports = DrinkItem;

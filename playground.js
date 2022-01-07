@@ -1,7 +1,35 @@
 const mongoose = require('mongoose');
-const { Menu, FoodType, FoodItem, Specification, DrinkItem } = require("./models");
+const { Menu, FoodType, FoodItem } = require("./models");
 
+// Menu.findOne()
+// .then((menu) => {
+//     console.log(menu);
+//     menu.drinkItems.push({
+//         name: "Hot Chocolate",
+//         description: "Hot chocolate mixed with whipped cream",
+//         price: 6000000000
+//     })
+//     menu.save()
+// })
 
+//find ALL the menus
+// Menu.find({})
+// .then((menus) => {
+//     console.log(menus);
+// })
+
+//delete whole menu
+// Menu.findByIdAndDelete(
+//     "61d4d14c84b51f5451b558fe",
+//     function (err, docs) {
+//         if (err){
+//             console.log(err)
+//         }
+//         else{
+//             console.log("Deleted : ", docs);
+//         }
+//     }
+// );
 
 ////Whole Menu
 // const menu = new Menu({
