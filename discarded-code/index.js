@@ -22,7 +22,7 @@ db.on("error", () => {
 });
 
 module.exports = {
-    FoodItem: require("../models/FoodItem"),
-    FoodType: require("../models/FoodType"),
+    // FoodItem: require("../models/FoodItem"),
+    // FoodType: require("../models/FoodType"),
     Menu: require("../models/menu")
 };

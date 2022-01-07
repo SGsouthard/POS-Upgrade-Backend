@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { Menu, FoodType, FoodItem } = require("./models");
+const { Menu, FoodType, FoodItem,  } = require("./models");
 
 // Menu.findOne()
 // .then((menu) => {
@@ -163,6 +163,13 @@ console.log(menu);
 //     description: "cheese and mac",
 //     price: 100,
 // });
+// const drink = new drinkItem({
+//     name: "",
+//     description: "",
+//     price: ,
+// });
+// drink.save()
+// console.log(drink);
 
 // drink.save()
 // console.log(drink);
