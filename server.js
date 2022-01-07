@@ -32,10 +32,9 @@ app.get("/menu", async (request, response) => {
 
 app.get("/food", async (request, response) => {
   try {
-    const statement = "Is there anything here?"
-    const foodArray = await Menu.find({foodItem});
+    const foodArray = await Menu.find({foodType: "Pastry"});
     console.log(foodArray);
-    response.json({ statement, foodArray });
+    response.json({ foodArray });
   } catch (error) {
     response.status(500).send(error);
   }
