@@ -1,5 +1,5 @@
 const express = require("express");
-const { Menu } = require("./discarded-code");
+const { Menu } = require("./models");
 const app = express();
 
 app.use((req, res, next) => {
@@ -20,6 +20,27 @@ app.get("/", async (request, response) => {
     response.status(500).send(error);
   }
 });
+
+app.get("/menu", async (request, response) => {
+  try {
+    const menuArray = await Menu.find({});
+    response.json({ menuArray });
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
+app.get("/food", async (request, response) => {
+  try {
+    const statement = "Is there anything here?"
+    const foodArray = await Menu.find({foodItem});
+    console.log(foodArray);
+    response.json({ statement, foodArray });
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
 
 app.listen(3000, () => {
   console.log("Serving up delicious data on Server 3000");
