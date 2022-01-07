@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const orderSchema = new mongoose.Schema({
     tableNumber: Number,
-    order: String,
+    order: Array,
     orderTotal: Number
 })
 

@@ -5,7 +5,7 @@ const foodItem = new mongoose.Schema({
     name: String,
     description: String,
     price: Number,
-    foodType: String,
+    foodType: Array,
 })
 
 //Drinks
@@ -13,7 +13,7 @@ const drinkItem = new mongoose.Schema({
     name: String,
     description: String,
     price: Number,
-    foodType: String,
+    foodType: Array,
 })
 
 //Food Types (alcohol, lunch, dinner?)

@@ -45,25 +45,25 @@ const menu = new Menu({
             name: "Caprese Sandwich",
             description: "tomatoes, mozarella and pesto spread on two a baguette",
             price: 8,
-            foodType: "",
+            foodType: ["Food", "Lunch", "Sandwich", "Vegetarian"]
         },
         {
             name: "Croissant",
             description: "flaky and buttery, fresh baked every morning",
             price: 4,
-            foodType: "",
+            foodType: ["Food", "Breakfast", "Pastry"]
         },
         {
             name: "Biscotti",
             description: "crunchy and sweet, perfect for dipping in your coffee",
             price: 3,
-            foodType: "",
+            foodType: ["Food", "Dessert", "Pastry"]
         },
         {
             name: "Curry",
             description: "fire spicy goodness",
             price: 4,
-            foodType: "",
+            foodType: ["Food", "Lunch", "Dinner", ]
         }
     ],
     drinkItems: [
@@ -71,25 +71,25 @@ const menu = new Menu({
            name: "Latte",
            description: "Two shots of Espresso, steamed milk topped with foam",
            price: 6,
-           foodType: "", 
+           foodType: ["Drink", "Coffee"]
         },
         {
             name: "Cappuccino",
             description: "One shot of Espresso, a little steamed milk topped with foam",
             price: 6,
-            foodType: "", 
+            foodType: ["Drink", "Coffee"]
         },
         {
             name: "Americano",
             description: "Two shots of espresso with hot water",
             price: 4,
-            foodType: "", 
+            foodType: ["Drink", "Coffee"]
         },
         {
             name: "boba",
             description: "yummy sweet pearls",
             price: 5,
-            foodType: "",
+            foodType: ["Drink"]
         }
         
 
