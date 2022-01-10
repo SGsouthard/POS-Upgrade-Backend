@@ -1,16 +1,17 @@
 const mongoose = require('mongoose');
 const { Menu, FoodType, FoodItem,  } = require("./models");
 
-// Menu.findOne()
-// .then((menu) => {
-//     console.log(menu);
-//     menu.drinkItems.push({
-//         name: "Hot Chocolate",
-//         description: "Hot chocolate mixed with whipped cream",
-//         price: 6000000000
-//     })
-//     menu.save()
-// })
+Menu.findOne()
+.then((menu) => {
+    console.log(menu);
+    menu.drinkItems.push({
+        name: "Cold-Brew Coffee",
+        description: "Hot chocolate mixed with whipped cream",
+        price: 3,
+        foodType: ["Drink"]
+    })
+    menu.save()
+})
 
 //find ALL the menus
 // Menu.find({})
@@ -25,7 +26,7 @@ const { Menu, FoodType, FoodItem,  } = require("./models");
 
 //delete whole menu
 // Menu.findByIdAndDelete(
-//     "61d4d14c84b51f5451b558fe",
+//     "61d7393111709dbcd1daa279",
 //     function (err, docs) {
 //         if (err){
 //             console.log(err)
