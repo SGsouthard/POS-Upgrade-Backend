@@ -1,17 +1,17 @@
 const mongoose = require('mongoose');
 const { Menu, FoodType, FoodItem,  } = require("./models");
 
-Menu.findOne()
-.then((menu) => {
-    menu.specificationDrinks.push(
-        {
-        name: "Extra Flavor",
-        price: 1
-        }
-   )
-    menu.save()
-    console.log(menu.specificationDrinks);
-})
+// Menu.findOne()
+// .then((menu) => {
+//     menu.specificationDrinks.push(
+//         {
+//         name: "Extra Flavor",
+//         price: 1
+//         }
+//    )
+//     menu.save()
+//     console.log(menu.specificationDrinks);
+// })
 
 //find ALL the menus
 // Menu.find({})

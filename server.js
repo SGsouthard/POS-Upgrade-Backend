@@ -32,8 +32,7 @@ app.get("/menu", async (request, response) => {
 
 app.get("/food", async (request, response) => {
   try {
-    const query = Menu.find();
-    const foodArray = await query.setOptions({ foodType: 'Food'});
+    const foodArray = await Menu.find({ foodTypes: 'Food'}, (err, res) => {});
     console.log(foodArray);
     response.json({ foodArray });
   } catch (error) {
