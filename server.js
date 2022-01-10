@@ -1,5 +1,6 @@
 const express = require("express");
 const { Menu } = require("./models");
+const mongoose = require('mongoose');
 const app = express();
 
 app.use((req, res, next) => {
@@ -32,8 +33,7 @@ app.get("/menu", async (request, response) => {
 
 app.get("/food", async (request, response) => {
   try {
-    const foodArray = await Menu.find({ foodTypes: 'Food'}, (err, res) => {});
-    console.log(foodArray);
+    const foodArray = await Menu.find({'foodType': 'Food'});
     response.json({ foodArray });
   } catch (error) {
     response.status(500).send(error);
