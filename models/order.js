@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const orderSchema = new mongoose.Schema({
     tableNumber: Number,
     order: Array,
-    orderTotal: Number
+    orderTotal: Number,
+    comment: String
 })
 
 const OrderSchema = mongoose.model("OrderSchema", orderSchema)
