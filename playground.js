@@ -3,14 +3,16 @@ const { Menu, FoodType, FoodItem,  } = require("./models");
 
 Menu.findOne()
 .then((menu) => {
-    console.log(menu);
-    menu.drinkItems.push({
-        name: "Cold-Brew Coffee",
-        description: "Hot chocolate mixed with whipped cream",
-        price: 3,
+    menu.drinkItems.push(
+        {
+        name: "Root Beer" ,
+        description: "Served with ice",
+        price: 4,
         foodType: ["Drink"]
-    })
+        }
+   )
     menu.save()
+    console.log(menu.drinkItems);
 })
 
 //find ALL the menus
