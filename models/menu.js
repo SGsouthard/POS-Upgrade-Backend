@@ -3,17 +3,21 @@ const mongoose = require('mongoose');
 //Food Items
 const foodItem = new mongoose.Schema({
     name: String,
+    category: String,
     description: String,
     price: Number,
     foodType: Array,
+    options: Array
 })
 
 //Drinks
 const drinkItem = new mongoose.Schema({
     name: String,
+    category: String,
     description: String,
     price: Number,
     foodType: Array,
+    options: Array
 })
 
 //Food Types (alcohol, lunch, dinner?)
