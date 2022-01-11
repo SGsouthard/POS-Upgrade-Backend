@@ -13,6 +13,7 @@ app.use((req, res, next) => {
   next();
 });
 
+//main page
 app.use(express.json());
 app.get("/", async (request, response) => {
   try {
@@ -23,6 +24,7 @@ app.get("/", async (request, response) => {
   }
 });
 
+//The entire menu
 app.get("/menu", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
@@ -33,6 +35,7 @@ app.get("/menu", async (request, response) => {
   }
 });
 
+//The drinks section (change the element on menuArray to 0 to see complete menu)
 app.get("/drinks", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
@@ -46,6 +49,7 @@ app.get("/drinks", async (request, response) => {
   }
 });
 
+//The foods section (change the element on menuArray to 0 to see complete menu)
 app.get("/foods", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
@@ -65,7 +69,34 @@ app.get("/foods", async (request, response) => {
   }
 });
 
-app.get("/sandwiches", async (request, response) => {
+app.get("/drinks/coffee", async (request, response) => {
+  try {
+    const menuArray = await Menu.find({});
+    const drinksArray = menuArray[1].drinkItems.filter((drink) => { 
+      return drink.foodType.includes("Coffee")
+    })
+    console.log(drinksArray)
+    response.json({ drinksArray });
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
+app.get("/drinks/soda", async (request, response) => {
+  try {
+    const menuArray = await Menu.find({});
+    const drinksArray = menuArray[1].drinkItems.filter((drink) => { 
+      return drink.foodType.includes("Soda")
+    })
+    console.log(drinksArray)
+    response.json({ drinksArray });
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
+//The sandwiches section (change the element on menuArray to 0 to see complete menu)
+app.get("/food/sandwiches", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
     const sandoArray = menuArray[0].foodItems.filter((foodItems) => {
@@ -77,10 +108,21 @@ app.get("/sandwiches", async (request, response) => {
       console.log(sandoArray)
     })
     console.log(sandoArray)
-    response.json({ drinkArray: menuArray[0].drinkItems });
+    response.json({ sandoArray: menuArray[0].foodItems });
   } catch (error) {
     response.status(500).send(error);
   }
+});
+
+//The food-types section
+app.get("/food-types", async (request, response) => {
+  try {
+    const statement = "Food Types will go here"
+    response.json({ statement });
+  } catch (error) {
+    response.status(500).send(error);
+  }
+
 });
 
 //using else/if
