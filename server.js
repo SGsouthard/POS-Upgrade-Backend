@@ -3,6 +3,7 @@ const { Menu } = require("./models");
 const mongoose = require('mongoose');
 const app = express();
 
+
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.header(
@@ -67,12 +68,11 @@ app.get("/foods", async (request, response) => {
 app.get("/sandwiches", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
-    const sandoArray = menuArray[0].foodItems.filter((foodType) => {
+    const sandoArray = menuArray[0].foodItems.filter((foodItems) => {
       if (error) {
         console.log("There was an issue")
       } else {
-        console.log("False")
-        return false;
+        
       }
       console.log(sandoArray)
     })
