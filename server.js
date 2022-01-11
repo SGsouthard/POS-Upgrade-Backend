@@ -32,54 +32,52 @@ app.get("/menu", async (request, response) => {
   }
 });
 
-
-// use try/catch
 app.get("/drinks", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
-    const drinkArray = menuArray[0].drinkItems.filter((drinkItem) => {
-      // foodItem.foodType;
+    const drinkArray = menuArray[1].drinkItems.filter((drinkItem) => {
       console.log(drinkItem.foodType)
+    })
+    console.log("Did it work", menuArray[1].drinkItems)
+    response.json({ drinkArray: menuArray[1].drinkItems });
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
+app.get("/foods", async (request, response) => {
+  try {
+    const menuArray = await Menu.find({});
+    const foodArray = menuArray[1].foodItems.filter((foodItem) => {
+      // foodItem.foodType;
+      console.log(foodItem.foodType)
       // if (foodItem.foodType.includes("Alcohol")) {
       //   return true;
       // } else {
       //   return false;
       // }
     })
-    console.log("Did it work", menuArray[0].drinkItems)
-    response.json({ drinkArray: menuArray[0].drinkItems });
+    console.log("Did it work", menuArray[1].foodItems)
+    response.json({ foodArray: menuArray[1].foodItems });
   } catch (error) {
     response.status(500).send(error);
   }
 });
 
-app.get("/alcohol", async (request, response) => {
+app.get("/sandwiches", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
-    const drinkArray = menuArray[0].drinkItems.filter((drinkItem) => {
-      console.log(drinkItem.foodType)
-      if (foodItem.foodType.includes("Alcohol")) {
+    const sandoArray = menuArray[0].foodItems.filter((foodItem) => {
+      // console.log(foodItem.foodType)
+      if (foodItem.foodType.includes("Sandwich")) {
+        console.log("True")
         return true;
       } else {
+        console.log("False")
         return false;
       }
     })
-    console.log("Did it work", menuArray[0].drinkItems)
     response.json({ drinkArray: menuArray[0].drinkItems });
-  } catch (error) {
-    response.status(500).send(error);
-  }
-});
-
-app.get("/try", async (request, response) => {
-  try {
-    const menuArray = db.Group-Project-POS.find({
-      foodType: {
-        $all: ["Dessert"],
-      },
-    });
-    response.json({ menuArray });
-    console.log(menuArray);
   } catch (error) {
     response.status(500).send(error);
   }
