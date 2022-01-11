@@ -67,7 +67,7 @@ app.get("/foods", async (request, response) => {
 app.get("/sandwiches", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
-    const sandoArray = menuArray[0].foodItems.filter((foodItem) => {
+    const sandoArray = menuArray[0].foodItems.filter((foodType) => {
       // console.log(foodItem.foodType)
       if (foodItem.foodType.includes("Sandwich")) {
         console.log("True")
