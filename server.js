@@ -3,6 +3,7 @@ const { Menu } = require("./models");
 const mongoose = require('mongoose');
 const app = express();
 
+
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.header(
@@ -15,7 +16,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.get("/", async (request, response) => {
   try {
-    const statement = "Mic Check 1, 2 what is this?";
+    const statement = "Welcome to the Group-POS Database! Current routes are as follows: /menu leads to a Complete Menu, /drinks leads to all drink items, /foods leads to all food items";
     response.json({ statement });
   } catch (error) {
     response.status(500).send(error);
@@ -67,16 +68,15 @@ app.get("/foods", async (request, response) => {
 app.get("/sandwiches", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
-    const sandoArray = menuArray[0].foodItems.filter((foodType) => {
-      // console.log(foodItem.foodType)
-      if (foodItem.foodType.includes("Sandwich")) {
-        console.log("True")
-        return true;
+    const sandoArray = menuArray[0].foodItems.filter((foodItems) => {
+      if (error) {
+        console.log("There was an issue")
       } else {
-        console.log("False")
-        return false;
+        
       }
+      console.log(sandoArray)
     })
+    console.log(sandoArray)
     response.json({ drinkArray: menuArray[0].drinkItems });
   } catch (error) {
     response.status(500).send(error);
@@ -92,23 +92,6 @@ app.get("/sandwiches", async (request, response) => {
 //     else if (data){
 //       console.log(data);
 //     }
-//   })
-// });
-
-// app.post('/api/admin/getUser', (req, res) => {
-//   //console.log(JSON.stringify(req.body.emailAddress))
-//   var queryEmailAddress = req.body.emailAddress;
-//   // console.log(queryEmailAddress);
-//   userModel.findOne({emailAddress: queryEmailAddress}, (error, data) => {
-//     if (error) {
-//       console.log(error);
-//       return res.status(404).send('404 error in finding user');
-//     }
-//     else if (data){
-//       // console.log(data);
-//       return res.send(data);
-//     }
-//     else return res.status(404).send('404 not found');
 //   })
 // });
 
