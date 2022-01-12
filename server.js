@@ -18,8 +18,8 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.get("/", async (request, response) => {
   try {
-    const statement = "Welcome to the Group-POS Database! Current routes are as follows: /menu leads to a Complete Menu, /drinks leads to all drink items, /foods leads to all food items";
-    response.json({ statement });
+    const statement1 = "Welcome to the Group-POS Database!";
+    response.json({ statement1 });
   } catch (error) {
     response.status(500).send(error);
   }
@@ -40,9 +40,9 @@ app.get("/menu", async (request, response) => {
 app.get("/menu/food-specifications", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
-    const specArray = menuArray[0].specificationFood.filter((foodSpec) => {})
+    const specArray = menuArray[1].specificationFood.filter((foodSpec) => {})
     console.log("Menu Specs Loaded");
-    response.json({ specArray: menuArray[0].specificationFood });
+    response.json({ specArray: menuArray[1].specificationFood });
   } catch (error) {
     response.status(500).send(error);
   }
@@ -52,9 +52,9 @@ app.get("/menu/food-specifications", async (request, response) => {
 app.get("/menu/drink-specifications", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
-    const specArray = menuArray[0].specificationDrinks.filter((drinkSpec) => {})
+    const specArray = menuArray[1].specificationDrinks.filter((drinkSpec) => {})
     console.log("Menu Specs Loaded");
-    response.json({ specArray: menuArray[0].specificationDrinks });
+    response.json({ specArray: menuArray[1].specificationDrinks });
   } catch (error) {
     response.status(500).send(error);
   }
@@ -79,7 +79,7 @@ app.get("/foods", async (request, response) => {
     const foodArray = menuArray[1].foodItems.filter((foodItem) => {
     })
     console.log("Foods Loaded")
-    response.json({ foodArray: menuArray[1].foodItems });
+    response.json({ foodArray: menuArray[0].foodItems });
   } catch (error) {
     response.status(500).send(error);
   }
@@ -117,7 +117,7 @@ app.get("/drinks/sodas", async (request, response) => {
 app.get("/drinks/alcohol", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
-    const drinksArray = menuArray[1].drinkItems.filter((drink) => { 
+    const drinksArray = menuArray[0].drinkItems.filter((drink) => { 
       return drink.foodType.includes("Alcohol")
     })
     console.log(drinksArray)
@@ -145,7 +145,7 @@ app.get("/foods/sandwiches", async (request, response) => {
 app.get("/foods/breakfast", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
-    const foodsArray = menuArray[1].foodItems.filter((food) => { 
+    const foodsArray = menuArray[0].foodItems.filter((food) => { 
       return food.foodType.includes("Breakfast")
     })
     console.log("Breakfast Loaded")
@@ -229,7 +229,7 @@ app.get("/foods/vegetarian", async (request, response) => {
 app.get("/foods/soups", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
-    const foodsArray = menuArray[1].foodItems.filter((food) => { 
+    const foodsArray = menuArray[0].foodItems.filter((food) => { 
       return food.foodType.includes("Soup")
     })
     console.log("Soups Loaded")
@@ -243,7 +243,7 @@ app.get("/foods/soups", async (request, response) => {
 app.get("/foods/salads", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
-    const foodsArray = menuArray[1].foodItems.filter((food) => { 
+    const foodsArray = menuArray[0].foodItems.filter((food) => { 
       return food.foodType.includes("Salad")
     })
     console.log("Salads Loaded")
