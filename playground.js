@@ -2,8 +2,6 @@ const mongoose = require("mongoose");
 const { Menu, FoodType, FoodItem } = require("./models");
 
 const express = require("express");
-const { Menu } = require("./models");
-const mongoose = require("mongoose");
 const app = express();
 
 // just some stuff i found
@@ -43,7 +41,7 @@ const app = express();
                                 // name you want // name incase it doesnt work optional
 //   db.collection.renameCollection(target, dropTarget);
 
-  db.Group-Project-POS.renameCollection(GroupPos, dropTarget);
+//   db.Group-Project-POS.renameCollection(GroupPos, dropTarget);
 
 // const foodID = "61d8b30315065167b99ec90d"
 // Menu.findByIdAndUpdate(foodID,
@@ -52,12 +50,16 @@ const app = express();
 //         specifications: ["Half", "Full"]
 //     })
 
-// Menu.findOne()
+// Menu.findById("61dca73126e107d66f4c7c2c")
 // .then((menu) => {
-//     menu.specificationDrinks.push(
+//     menu.drinkItems.push(
 //         {
-//         name: "Extra Flavor",
-//         price: 1
+//         name: "Cola",
+//         category: "Soda",
+//         description: "Really bad for your teeth",
+//         price: 3,
+//         foodType: ["Drink", "Soda"],
+//         options: ["Small", "Medium", "Large", "In House", "ToGo"]
 //         }
 //    )
 //     menu.save()
@@ -248,14 +250,14 @@ const app = express();
 // menu.save()
 // console.log(menu);
 
-// const food = new FoodItem({
+// const drink = new drinkItem({
 //     name: "Mac and Cheese",
 //     description: "cheese and mac",
 //     price: 100,
 // });
 
-// food.save()
-// console.log(food);
+// drink.save()
+// console.log(drink);
 
 // const drink = new drinkItem({
 //     name: "Mac and Cheese",
