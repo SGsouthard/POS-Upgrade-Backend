@@ -3,6 +3,7 @@ const { Menu } = require("./models");
 const mongoose = require('mongoose');
 const app = express();
 
+const PORT = process.env.PORT || 3000;
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -200,6 +201,6 @@ app.get("/foods/soups", async (request, response) => {
   }
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("Serving up delicious data on Server 3000");
 });
