@@ -29,7 +29,6 @@ app.get("/", async (request, response) => {
 app.get("/menu", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
-    console.log("Menu Loaded");
     response.json({ menuArray });
   } catch (error) {
     response.status(500).send(error);
@@ -41,7 +40,6 @@ app.get("/menu/food-specifications", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
     const specArray = menuArray[1].specificationFood.filter((foodSpec) => {})
-    console.log("Menu Specs Loaded");
     response.json({ specArray: menuArray[1].specificationFood });
   } catch (error) {
     response.status(500).send(error);
@@ -53,7 +51,6 @@ app.get("/menu/drink-specifications", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
     const specArray = menuArray[1].specificationDrinks.filter((drinkSpec) => {})
-    console.log("Menu Specs Loaded");
     response.json({ specArray: menuArray[1].specificationDrinks });
   } catch (error) {
     response.status(500).send(error);
@@ -65,7 +62,6 @@ app.get("/drinks", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
     const drinkArray = menuArray[1].drinkItems.filter((drinkItem) => {})
-    console.log("Drinks Loaded")
     response.json({ drinkArray: menuArray[1].drinkItems });
   } catch (error) {
     response.status(500).send(error);
@@ -78,7 +74,6 @@ app.get("/foods", async (request, response) => {
     const menuArray = await Menu.find({});
     const foodArray = menuArray[1].foodItems.filter((foodItem) => {
     })
-    console.log("Foods Loaded")
     response.json({ foodArray: menuArray[0].foodItems });
   } catch (error) {
     response.status(500).send(error);
@@ -92,7 +87,6 @@ app.get("/drinks/coffees", async (request, response) => {
     const drinksArray = menuArray[1].drinkItems.filter((drink) => { 
       return drink.foodType.includes("Coffee")
     })
-    console.log(drinksArray)
     response.json({ drinksArray });
   } catch (error) {
     response.status(500).send(error);
@@ -106,7 +100,6 @@ app.get("/drinks/sodas", async (request, response) => {
     const drinksArray = menuArray[1].drinkItems.filter((drink) => { 
       return drink.foodType.includes("Soda")
     })
-    console.log(drinksArray)
     response.json({ drinksArray });
   } catch (error) {
     response.status(500).send(error);
@@ -120,7 +113,6 @@ app.get("/drinks/alcohol", async (request, response) => {
     const drinksArray = menuArray[0].drinkItems.filter((drink) => { 
       return drink.foodType.includes("Alcohol")
     })
-    console.log(drinksArray)
     response.json({ drinksArray });
   } catch (error) {
     response.status(500).send(error);
@@ -134,7 +126,6 @@ app.get("/foods/sandwiches", async (request, response) => {
     const foodsArray = menuArray[1].foodItems.filter((food) => { 
       return food.foodType.includes("Sandwich")
     })
-    console.log("Sandwiches Loaded")
     response.json({ foodsArray });
   } catch (error) {
     response.status(500).send(error);
@@ -148,7 +139,6 @@ app.get("/foods/breakfast", async (request, response) => {
     const foodsArray = menuArray[0].foodItems.filter((food) => { 
       return food.foodType.includes("Breakfast")
     })
-    console.log("Breakfast Loaded")
     response.json({ foodsArray });
   } catch (error) {
     response.status(500).send(error);
@@ -162,7 +152,6 @@ app.get("/foods/lunches", async (request, response) => {
     const foodsArray = menuArray[1].foodItems.filter((food) => { 
       return food.foodType.includes("Lunch")
     })
-    console.log("Lunches Loaded")
     response.json({ foodsArray });
   } catch (error) {
     response.status(500).send(error);
@@ -176,7 +165,6 @@ app.get("/foods/dinners", async (request, response) => {
     const foodsArray = menuArray[1].foodItems.filter((food) => { 
       return food.foodType.includes("Dinner")
     })
-    console.log("Dinners Loaded")
     response.json({ foodsArray });
   } catch (error) {
     response.status(500).send(error);
@@ -190,7 +178,6 @@ app.get("/foods/desserts", async (request, response) => {
     const foodsArray = menuArray[1].foodItems.filter((food) => { 
       return food.foodType.includes("Dessert")
     })
-    console.log("Desserts Loaded")
     response.json({ foodsArray });
   } catch (error) {
     response.status(500).send(error);
@@ -204,7 +191,6 @@ app.get("/foods/pastries", async (request, response) => {
     const foodsArray = menuArray[1].foodItems.filter((food) => { 
       return food.foodType.includes("Pastry")
     })
-    console.log("Pastries Loaded")
     response.json({ foodsArray });
   } catch (error) {
     response.status(500).send(error);
@@ -218,7 +204,6 @@ app.get("/foods/vegetarian", async (request, response) => {
     const foodsArray = menuArray[1].foodItems.filter((food) => { 
       return food.foodType.includes("Vegetarian")
     })
-    console.log("Veggies Loaded")
     response.json({ foodsArray });
   } catch (error) {
     response.status(500).send(error);
@@ -232,7 +217,6 @@ app.get("/foods/soups", async (request, response) => {
     const foodsArray = menuArray[0].foodItems.filter((food) => { 
       return food.foodType.includes("Soup")
     })
-    console.log("Soups Loaded")
     response.json({ foodsArray });
   } catch (error) {
     response.status(500).send(error);
@@ -246,7 +230,6 @@ app.get("/foods/salads", async (request, response) => {
     const foodsArray = menuArray[0].foodItems.filter((food) => { 
       return food.foodType.includes("Salad")
     })
-    console.log("Salads Loaded")
     response.json({ foodsArray });
   } catch (error) {
     response.status(500).send(error);
