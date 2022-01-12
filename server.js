@@ -200,30 +200,6 @@ app.get("/foods/soups", async (request, response) => {
   }
 });
 
-//The food-types section
-app.get("/foods/types", async (request, response) => {
-  try {
-    const statement = "Food Types will go here"
-    response.json({ statement });
-  } catch (error) {
-    response.status(500).send(error);
-  }
-
-});
-
-//using else/if
-// app.get("/drinks", async (request, response) => {
-  // Menu.findOne({foodType: "Drink"}, (error, data) => {
-//     if (error) {
-//       console.log("Issue collecting Drinks", error);
-//     }
-//     else if (data){
-//       console.log(data);
-//     }
-//   })
-// });
-
-
 app.listen(3000, () => {
   console.log("Serving up delicious data on Server 3000");
 });

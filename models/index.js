@@ -31,7 +31,7 @@ module.exports = {
     // model goes here
     User,
     Menu: require("./menu"),
-    FoodItem: require("./FoodItem"),
+    FoodItem: require("./foodItem"),
     FoodType: require("./FoodType"),
     DrinkItem: require("./DrinkItem"),
     Specification: require("./Specification")
