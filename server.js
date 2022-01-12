@@ -61,7 +61,7 @@ app.get("/foods", async (request, response) => {
 });
 
 //The coffee section (change the element on menuArray to 0 to see complete menu)
-app.get("/drinks/coffee", async (request, response) => {
+app.get("/drinks/coffees", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
     const drinksArray = menuArray[1].drinkItems.filter((drink) => { 
@@ -75,7 +75,7 @@ app.get("/drinks/coffee", async (request, response) => {
 });
 
 //The soda section (change the element on menuArray to 0 to see complete menu)
-app.get("/drinks/soda", async (request, response) => {
+app.get("/drinks/sodas", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
     const drinksArray = menuArray[1].drinkItems.filter((drink) => { 
@@ -117,7 +117,7 @@ app.get("/foods/breakfast", async (request, response) => {
 });
 
 //The lunch section (change the element on menuArray to 0 to see complete menu)
-app.get("/foods/lunch", async (request, response) => {
+app.get("/foods/lunches", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
     const foodsArray = menuArray[1].foodItems.filter((food) => { 
@@ -131,7 +131,7 @@ app.get("/foods/lunch", async (request, response) => {
 });
 
 //The dinner section (change the element on menuArray to 0 to see complete menu)
-app.get("/foods/dinner", async (request, response) => {
+app.get("/foods/dinners", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
     const foodsArray = menuArray[1].foodItems.filter((food) => { 
@@ -145,7 +145,7 @@ app.get("/foods/dinner", async (request, response) => {
 });
 
 //The dessert section (change the element on menuArray to 0 to see complete menu)
-app.get("/foods/dessert", async (request, response) => {
+app.get("/foods/desserts", async (request, response) => {
   try {
     const menuArray = await Menu.find({});
     const foodsArray = menuArray[1].foodItems.filter((food) => { 
@@ -158,8 +158,50 @@ app.get("/foods/dessert", async (request, response) => {
   }
 });
 
+//The pastry section (change the element on menuArray to 0 to see complete menu)
+app.get("/foods/pastries", async (request, response) => {
+  try {
+    const menuArray = await Menu.find({});
+    const foodsArray = menuArray[1].foodItems.filter((food) => { 
+      return food.foodType.includes("Pastry")
+    })
+    console.log("Pastries Loaded")
+    response.json({ foodsArray });
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
+//The vegetarian section (change the element on menuArray to 0 to see complete menu)
+app.get("/foods/vegetarian", async (request, response) => {
+  try {
+    const menuArray = await Menu.find({});
+    const foodsArray = menuArray[1].foodItems.filter((food) => { 
+      return food.foodType.includes("Vegetarian")
+    })
+    console.log("Veggies Loaded")
+    response.json({ foodsArray });
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
+//The soup section (change the element on menuArray to 0 to see complete menu)
+app.get("/foods/soups", async (request, response) => {
+  try {
+    const menuArray = await Menu.find({});
+    const foodsArray = menuArray[1].foodItems.filter((food) => { 
+      return food.foodType.includes("Soup")
+    })
+    console.log("Soups Loaded")
+    response.json({ foodsArray });
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
 //The food-types section
-app.get("/food-types", async (request, response) => {
+app.get("/foods/types", async (request, response) => {
   try {
     const statement = "Food Types will go here"
     response.json({ statement });
