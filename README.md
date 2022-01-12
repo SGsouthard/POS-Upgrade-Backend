@@ -73,12 +73,15 @@ Menu.findById("61dca73126e107d66f4c7c2c")
 ### The Models
 
 So while a lot of models are available, the Menu Model was the only one used for the API itself. 
+
 ![A screenshot of the code for the Menu Model](Images/menu-model.png)
 
 There's also the User model for when people log in. 
+
 ![A screenshot of the code for the User Model](Images/user-model.png)
 
 I made seperate models for food items and drink items but we decided to go with an Embedded format instead. I held on to them in case we wanted to make a jump to a Referenced format. 
+
 ![A screenshot of the code for the User Model](Images/drink-food-model.png)
 
 ### Thank you for taking the time to read this! *Cheers~*
